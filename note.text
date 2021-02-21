@@ -1,0 +1,15 @@
+
+- Phân quyền | Thêm sửa xoá tk
+    - Admin full
+    - Staff ( nhân viên )
+        +
+    - Manage
+        + Chỉ vào đc http://localhost:8000/admin/leaves.php
+
+    - Director
+        + Chỉ vào đc http://localhost:8000/admin/leaves.php
+
+- http://localhost:8000/admin/addemployee.php
+    - Thay Mobile Number -> Số ngày nghỉ |  Tự động trừ đi khi đc phê duyệt nghỉ
+- http://localhost:8000/leavehistory.php
+    - export ra thông tin chi tiết ngày nghỉ

@@ -141,10 +141,10 @@ $empcount = $query->rowCount();
                                             <td><?php $stats = $result->Status;
                                                 if ($stats == 1) {
                                                     ?>
-                                                    <span style="color: green">Approved <?= $result->UserName ?></span>
+                                                    <span style="color: green">Approved by <?= $result->UserName ?></span>
                                                 <?php }
                                                 if ($stats == 2) { ?>
-                                                    <span style="color: red">Not Approved <?= $result->UserName ?></span>
+                                                    <span style="color: red">Not Approved by <?= $result->UserName ?></span>
                                                 <?php }
                                                 if ($stats == 0) { ?>
                                                     <span style="color: blue">Waiting for approal</span>

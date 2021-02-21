@@ -85,7 +85,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                             <tbody>
                             <?php
                             $status = 0;
-                            $sql    = "SELECT tblleaves.id as lid,ToDate, FromDate, tblemployees.FirstName,tblemployees.LastName,tblemployees.EmpId,tblemployees.id,tblleaves.LeaveType,tblleaves.PostingDate,tblleaves.Status from tblleaves join tblemployees on tblleaves.empid=tblemployees.id where tblleaves.Status=:status order by lid desc";
+                            $sql    = "SELECT tblleaves.id as lid,ToDate, FromDate, tblemployees.FirstName,tblemployees.LastName,tblemployees.EmpId,tblemployees.id,tblleaves.LeaveType,tblleaves.PostingDate,tblleaves.Status from tblleaves LEFT JOIN tblemployees on tblleaves.empid=tblemployees.id where tblleaves.Status=:status order by lid desc";
                             $query  = $dbh->prepare($sql);
                             $query->bindParam(':status', $status, PDO::PARAM_STR);
                             $query->execute();

@@ -101,7 +101,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                             <?php
                             $fullname = $_GET['sortname'];
                             $sql      = "SELECT admin.UserName ,adminid, tblleaves.id as lid,ToDate,FromDate, tblemployees.FirstName,tblemployees.SortName,tblemployees.LastName,tblemployees.EmpId,tblemployees.id,tblleaves.LeaveType,tblleaves.PostingDate,tblleaves.Status
-                             from tblleaves join tblemployees on tblleaves.empid=tblemployees.id 
+                             from tblleaves LEFT JOIN  tblemployees on tblleaves.empid=tblemployees.id 
                               LEFT JOIN admin on  tblleaves.adminid = admin.id where 1 ";
                             if ($fullname) {
                                 $sql .= "and tblemployees.SortName LIKE :sortname ";

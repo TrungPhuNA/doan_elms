@@ -18,6 +18,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -36,6 +37,7 @@
       <workItem from="1611580430158" duration="14696000" />
       <workItem from="1611818931582" duration="5059000" />
       <workItem from="1611904422602" duration="115000" />
+      <workItem from="1613890121894" duration="620000" />
     </task>
     <servers />
   </component>

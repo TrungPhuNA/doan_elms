@@ -10,7 +10,6 @@ if (strlen($_SESSION['alogin']) == 0) {
         $username = $_POST['UserName'];
         $password = md5($_POST['password']);
         $level    = $_POST['level'];
-
         $avatar = '';
 
         if ( isset($_FILES['avatar']))
@@ -40,7 +39,7 @@ if (strlen($_SESSION['alogin']) == 0) {
             $sql .= ", avatar=:avatar";
 
         $sql .= " where id =:lid";
-        var_dump($sql);
+
         $query       = $dbh->prepare($sql);
         $query->bindParam(':UserName', $username, PDO::PARAM_STR);
         $query->bindParam(':level', $level, PDO::PARAM_STR);
@@ -54,7 +53,7 @@ if (strlen($_SESSION['alogin']) == 0) {
         }
         $query->bindParam(':lid', $lid, PDO::PARAM_STR);
         $query->execute();
-        var_dump($query->errorCode());
+
         $query->debugDumpParams();
         $msg = "Leave type updated Successfully";
     }
@@ -144,7 +143,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                     </div>
                                     <div class="input-field col s12">
                                         <input id="leavetype" type="text" class="validate" autocomplete="off"
-                                               name="Password" value=""
+                                               name="password" value=""
                                                >
                                         <label for="Password">Password</label>
                                     </div>

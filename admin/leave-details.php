@@ -6,6 +6,17 @@ if (strlen($_SESSION['alogin']) == 0) {
     header('location:index.php');
 } else {
 
+
+    if(isset($_GET['delete']))
+    {
+        $id=$_GET['delete'];
+        $sql = "delete from  tblleaves  WHERE id=:id";
+        $query = $dbh->prepare($sql);
+        $query -> bindParam(':id',$id, PDO::PARAM_STR);
+        $query -> execute();
+        header('location:leaves.php');
+    }
+
 // code for update the read notification status
     $isread = 1;
     $did    = intval($_GET['leaveid']);
@@ -108,7 +119,7 @@ if (strlen($_SESSION['alogin']) == 0) {
             <div class="col s12 m12 l12">
                 <div class="card">
                     <div class="card-content">
-                        <span class="card-title">Leave Details</span>
+                        <span class="card-title">Leave Details <a href="leave-details.php?delete=<?php echo htmlentities($_GET['leaveid']);?>">Delete</a></span>
                         <?php if ($msg) { ?>
                             <div class="succWrap"><strong>SUCCESS</strong> : <?php echo htmlentities($msg); ?>
                             </div><?php } ?>

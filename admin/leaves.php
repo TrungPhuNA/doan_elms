@@ -134,13 +134,13 @@ if (strlen($_SESSION['alogin']) == 0) {
                                         <td><?php $stats = $result->Status;
                                             if ($stats == 1) {
                                                 ?>
-                                                <span style="color: green">Approved by <?= $result->UserName ?></span>
+                                                <span style="color: green;text-align: center;display: block">Approved by <?= $result->UserName ?></span>
                                             <?php }
                                             if ($stats == 2) { ?>
-                                                <span style="color: red">Not Approved by <?= $result->UserName ?></span>
+                                                <span style="color: red;text-align: center;display: block">Not Approved by <?= $result->UserName ?></span>
                                             <?php }
                                             if ($stats == 0) { ?>
-                                                <span style="color: blue">Waiting for approval</span>
+                                                <span style="color: blue;text-align: center;display: block">Waiting for approval</span>
                                             <?php } ?>
 
 

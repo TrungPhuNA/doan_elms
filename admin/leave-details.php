@@ -19,21 +19,35 @@ if (strlen($_SESSION['alogin']) == 0) {
 
 // code for action taken on leave
     if (isset($_POST['update'])) {
+        var_dump("UPDATE");
         $did         = intval($_GET['leaveid']);
         $description = $_POST['description'];
-        $status      = $_POST['status'];
-        $adminId     = $_SESSION['adminID'];
+        $status      = intval($_POST['status']);
+        $adminID     = intval($_SESSION['adminID']);
+
         date_default_timezone_set('Asia/Kolkata');
         $admremarkdate = date('Y-m-d G:i:s ', strtotime("now"));
         $sql           = "update tblleaves set AdminRemark=:description,Status=:status,AdminRemarkDate=:admremarkdate, adminid=:adminID where id=:did";
         $query         = $dbh->prepare($sql);
         $query->bindParam(':description', $description, PDO::PARAM_STR);
         $query->bindParam(':status', $status, PDO::PARAM_STR);
-        $query->bindParam(':adminid', $adminId, PDO::PARAM_STR);
+        $query->bindParam(':adminID', $adminID, PDO::PARAM_STR);
         $query->bindParam(':admremarkdate', $admremarkdate, PDO::PARAM_STR);
         $query->bindParam(':did', $did, PDO::PARAM_STR);
-        $query->execute();
-        $msg = "Leave updated Successfully";
+        try {
+            // run the query
+            $query->execute();
+        } catch (PDOException $e){
+            //sendErrorMail($e->getMessage(), $e->getFile(), $e->getLine());
+            echo $e->getMessage();
+            echo $e->getFile();
+            echo $e->getLine();
+        }
+//
+//        $query->execute();
+////        $query->debugDumpParams();
+//        var_dump($query->errorInfo());
+//        $msg = "Leave updated Successfully";
     }
 
 

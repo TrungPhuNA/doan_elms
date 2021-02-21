@@ -1,6 +1,6 @@
 <?php
 session_start();
-error_reporting(0);
+//error_reporting(0);
 include('includes/config.php');
 if (strlen($_SESSION['alogin']) == 0) {
     header('location:index.php');
@@ -54,7 +54,7 @@ if (strlen($_SESSION['alogin']) == 0) {
         $query->bindParam(':lid', $lid, PDO::PARAM_STR);
         $query->execute();
 
-        $query->debugDumpParams();
+//        $query->debugDumpParams();
         $msg = "Leave type updated Successfully";
     }
 
@@ -114,9 +114,9 @@ if (strlen($_SESSION['alogin']) == 0) {
 
                         <div class="row">
                             <form class="col s12" name="chngpwd" method="post" enctype="multipart/form-data">
-                                <?php if ($error) { ?>
+                                <?php if (isset($error)) { ?>
                                     <div class="errorWrap"><strong>ERROR</strong> : <?php echo htmlentities($error); ?>
-                                    </div><?php } else if ($msg) { ?>
+                                    </div><?php } else if (isset($msg)) { ?>
                                     <div class="succWrap"><strong>SUCCESS</strong> : <?php echo htmlentities($msg); ?>
                                     </div><?php } ?>
                                 <?php

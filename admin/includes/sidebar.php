@@ -88,6 +88,16 @@
                 </li>
             <?php endif ; ?>
             <li class="no-padding">
+                <a class="collapsible-header waves-effect waves-grey"><i class="material-icons">apps</i>Leaves<i
+                            class="nav-drop-icon material-icons">keyboard_arrow_right</i></a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li><a href="apply-leave.php">Apply Leave</a></li>
+                        <li><a href="leavehistory.php">Leave History</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="no-padding">
                 <a class="waves-effect waves-grey" href="logout.php"><i class="material-icons">exit_to_app</i>Sign
                     Out</a>
             </li>

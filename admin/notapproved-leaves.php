@@ -85,7 +85,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                             <tbody>
                             <?php
                             $status = 2;
-                            $sql    = "SELECT admin.UserName ,adminid,  tblleaves.id as lid,tblemployees.FirstName,tblemployees.LastName,tblemployees.EmpId,tblemployees.id,tblleaves.LeaveType,tblleaves.PostingDate,tblleaves.Status from
+                            $sql    = "SELECT admin.UserName ,adminid, ToDate, FromDate, tblleaves.id as lid,tblemployees.FirstName,tblemployees.LastName,tblemployees.EmpId,tblemployees.id,tblleaves.LeaveType,tblleaves.PostingDate,tblleaves.Status from
  tblleaves join tblemployees on tblleaves.empid=tblemployees.id 
  LEFT JOIN admin on  tblleaves.adminid = admin.id
  where tblleaves.Status=:status order by lid desc";
@@ -104,7 +104,9 @@ if (strlen($_SESSION['alogin']) == 0) {
                                                target="_blank"><?php echo htmlentities($result->FirstName . " " . $result->LastName); ?>
                                                 (<?php echo htmlentities($result->EmpId); ?>)</a></td>
                                         <td><?php echo htmlentities($result->LeaveType); ?></td>
-                                        <td><?php echo htmlentities($result->PostingDate); ?></td>
+                                        <td><?php echo htmlentities($result->ToDate); ?></td>
+                                        <td><?php echo htmlentities($result->FromDate); ?></td>
+
                                         <td><?php $stats = $result->Status;
                                             if ($stats == 1) {
                                                 ?>

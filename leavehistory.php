@@ -113,7 +113,7 @@ if (strlen($_SESSION['emplogin']) == 0) {
                                         <td><?php echo htmlentities($result->Description); ?></td>
                                         <td><?php echo htmlentities($result->PostingDate); ?></td>
                                         <td><?php if ($result->AdminRemark == "") {
-                                                echo htmlentities('waiting for approval');
+                                                echo htmlentities('Waiting for approval');
                                             } else {
 
                                                 echo htmlentities(($result->AdminRemark) . " " . "at" . " " . $result->AdminRemarkDate);

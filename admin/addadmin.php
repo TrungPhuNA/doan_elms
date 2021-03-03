@@ -35,7 +35,7 @@ if (strlen($_SESSION['alogin']) == 0) {
         $query->execute();
         $lastInsertId = $dbh->lastInsertId();
         if ($lastInsertId) {
-            $msg = "Leave type added Successfully";
+            $msg = "Admin account updated Successfully";
         } else {
             $error = "Something went wrong. Please try again";
         }

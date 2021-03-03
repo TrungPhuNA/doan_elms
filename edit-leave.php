@@ -2,14 +2,13 @@
 session_start();
 error_reporting(0);
 include('includes/config.php');
-$id = 31;
-//$id = (int)$_GET['id'];
+//$id = 31;
+$id = (int)$_GET['id'];
 if (strlen($_SESSION['emplogin']) == 0) {
     header('location:index.php');
 } else {
     if (isset($_POST['apply'])) {
-        $empid       = 3;
-//        $empid       = (int)$_SESSION['eid'];
+        $empid       = (int)$_SESSION['eid'];
         $leavetype   = $_POST['leavetype'];
         $fromdate    = $_POST['fromdate'];
         $todate      = $_POST['todate'];
@@ -17,10 +16,11 @@ if (strlen($_SESSION['emplogin']) == 0) {
         $status      = 0;
         $isread      = 0;
 
-        if ($fromdate > $todate) {
-            $error = " ToDate should be greater than FromDate ";
-        }
-        $sql   = "UPDATE  tblleaves set LeaveType=:leavetype, ToDate=:todate, FromDate=:fromdate, Description=:description, Status=:status, IsRead=:isread, empid=:empid  where id=:id";
+//        if ($fromdate > $todate) {
+//            $error = " ToDate should be greater than FromDate ";
+//        }
+
+        $sql   = "UPDATE  tblleaves set LeaveType=:leavetype, ToDate=:todate, FromDate=:fromdate, Description=:description, Status=:status, IsRead=:isread  where id=:id";
         $query = $dbh->prepare($sql);
         $query->bindParam(':leavetype', $leavetype, PDO::PARAM_STR);
         $query->bindParam(':fromdate', $fromdate, PDO::PARAM_STR);
@@ -28,11 +28,26 @@ if (strlen($_SESSION['emplogin']) == 0) {
         $query->bindParam(':description', $description, PDO::PARAM_STR);
         $query->bindParam(':status', $status, PDO::PARAM_STR);
         $query->bindParam(':isread', $isread, PDO::PARAM_STR);
-        $query->bindParam(':empid', $empid, PDO::PARAM_STR);
+//        $query->bindParam(':empid', $empid, PDO::PARAM_STR);
         $query->bindParam(':id', $id, PDO::PARAM_STR);
 
         $query->execute();
+//        $query->debugDumpParams();
         $count = $query->rowCount();
+//
+//        $sql   = "UPDATE  tblleaves set LeaveType=:leavetype, ToDate=:todate, FromDate=:fromdate, Description=:description, Status=:status, IsRead=:isread, empid=:empid  where id=:id";
+//        $query = $dbh->prepare($sql);
+//        $query->bindParam(':leavetype', $leavetype, PDO::PARAM_STR);
+//        $query->bindParam(':fromdate', $fromdate, PDO::PARAM_STR);
+//        $query->bindParam(':todate', $todate, PDO::PARAM_STR);
+//        $query->bindParam(':description', $description, PDO::PARAM_STR);
+//        $query->bindParam(':status', $status, PDO::PARAM_STR);
+//        $query->bindParam(':isread', $isread, PDO::PARAM_STR);
+//        $query->bindParam(':empid', $empid, PDO::PARAM_STR);
+//        $query->bindParam(':id', $id, PDO::PARAM_STR);
+//
+//        $query->execute();
+//        $count = $query->rowCount();
 
         if ($count == 1) {
             $msg = "Leave applied successfully";

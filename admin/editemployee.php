@@ -199,7 +199,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                                     </div>
 
                                                     <div class="input-field col m6 s12">
-                                                        <label for="birthdate">Date of Birth</label>
+                                                        <label for="birthdate" style="margin-top: -18px">Date of Birth</label>
                                                         <input id="birthdate" name="dob" class="datepicker"
                                                                value="<?php echo htmlentities($result->Dob); ?>">
                                                     </div>
@@ -250,7 +250,7 @@ if (strlen($_SESSION['alogin']) == 0) {
                                                     </div>
                                                     <div class="input-field col s12">
                                                         <div class="form-group">
-                                                            <i class="fa fa-file-image-o"></i> Ảnh đại diện
+                                                            <i class="fa fa-file-image-o"></i> Profile Picture
                                                             <input type="file" accept="image/*" name="avatar"
                                                                    class="form-control">
                                                         </div>

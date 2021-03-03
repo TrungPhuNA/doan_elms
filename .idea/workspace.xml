@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="468a01ea-a52a-40d4-94ba-6e9f5ba69150" name="Default Changelist" comment="" />
+    <list default="true" id="468a01ea-a52a-40d4-94ba-6e9f5ba69150" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/addadmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/addadmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/editadmin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editadmin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/editemployee.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/editemployee.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/includes/sidebar.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin/includes/sidebar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/edit-leave.php" beforeDir="false" afterPath="$PROJECT_DIR$/edit-leave.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/leavehistory.php" beforeDir="false" afterPath="$PROJECT_DIR$/leavehistory.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +18,11 @@
   <component name="ComposerSettings">
     <execution />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1nV5PM9gWkv6cQDGXjucKot65T7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -19,7 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -48,7 +60,8 @@
       <workItem from="1611580430158" duration="14696000" />
       <workItem from="1611818931582" duration="5059000" />
       <workItem from="1611904422602" duration="115000" />
-      <workItem from="1613890121894" duration="6509000" />
+      <workItem from="1613890121894" duration="6751000" />
+      <workItem from="1614779090531" duration="2348000" />
     </task>
     <servers />
   </component>
